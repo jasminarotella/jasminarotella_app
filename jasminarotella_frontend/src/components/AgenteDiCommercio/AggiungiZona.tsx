@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import './AggiungiZona.css'
 import { Link } from "react-router-dom";
+const API_URL = import.meta.env.VITE_API_URL;
+
 
 const AggiungiZona: React.FC = () => {
     const [cap, setCap] = useState("");
@@ -13,10 +15,11 @@ const AggiungiZona: React.FC = () => {
             setMessage("❌ Devi essere loggato per aggiungere una zona.");
             return;
         }
-    
+        
+        
         try {
             await axios.post(
-                "http://127.0.0.1:5000/add-zone",
+                `${API_URL}/add-zone`,
                 { cap: cap },
                 { headers: { "x-access-token": token } }
             );

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import './ModificaPassword.css'
 import axios from "axios";
+const API_URL = import.meta.env.VITE_API_URL;
 
 const ModificaPassword: React.FC = () => {
     const [newPassword, setNewPassword] = useState("");
@@ -17,7 +18,7 @@ const ModificaPassword: React.FC = () => {
 
         try {
              await axios.put(
-                "http://127.0.0.1:5000/change-password",
+                `${API_URL}/change-password`,
                 { new_password: newPassword },
                 { headers: { "x-access-token": token } }
             );

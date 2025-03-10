@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import './ZoneAgente.css'
 import { Link } from "react-router-dom";
+const API_URL = import.meta.env.VITE_API_URL;
 
 const ZoneAgente: React.FC = () => {
     const [caps, setCaps] = useState<string[]>([]);
@@ -20,7 +21,7 @@ const ZoneAgente: React.FC = () => {
 
             try {
                 const response = await axios.post(
-                    "http://127.0.0.1:5000/list-caps",
+                    `${API_URL}/list-caps`,
                     {},
                     { headers: { "x-access-token": token } }
                 );
@@ -44,7 +45,7 @@ const ZoneAgente: React.FC = () => {
 
         try {
             const response = await axios.get(
-                `http://127.0.0.1:5000/get-places/${cap}`,
+                `${API_URL}/get-places/${cap}`,
                 { headers: { "x-access-token": token } }
             );
 
@@ -68,7 +69,7 @@ const ZoneAgente: React.FC = () => {
 
         try {
             await axios.delete(
-                `http://127.0.0.1:5000/delete-zone/${cap}`,
+               `${API_URL}/delete-zone/${cap}`,
                 { headers: { "x-access-token": token } }
             );
 
@@ -88,7 +89,7 @@ const ZoneAgente: React.FC = () => {
         }
 
         try {
-            await axios.delete("http://127.0.0.1:5000/delete-place", {
+            await axios.delete(`${API_URL}/delete-place`, {
                 headers: { "x-access-token": token },
                 data: { cap: cap, place_name: place }
             });
@@ -112,7 +113,7 @@ const ZoneAgente: React.FC = () => {
             return;
         }
         try {
-            await axios.delete("http://127.0.0.1:5000/delete-all-places", {
+            await axios.delete(`${API_URL}/delete-all-places`, {
                 headers: { "x-access-token": token },
                 data: { cap: cap } // Passa il CAP nel body della richiesta
             });

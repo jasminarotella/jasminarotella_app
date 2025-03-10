@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+const API_URL = import.meta.env.VITE_API_URL;
 
 const Registrazione: React.FC = () => {
     const [email, setEmail] = useState("");
@@ -11,7 +12,8 @@ const Registrazione: React.FC = () => {
     // Funzione per gestire la registrazione
     const handleRegister = async () => {
         try {
-             await axios.post("http://127.0.0.1:5000/register", {
+            
+             await axios.post(`${API_URL}/register`,{
                 email: email,
                 password: password,
             });
