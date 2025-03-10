@@ -2,7 +2,7 @@
 set -e  # Ferma lo script se un comando fallisce
 
 echo "🚀 Inizio build del frontend..."
-cd /jasminarotella_frontend  # 🔹 CORRETTO IL PERCORSO
+cd jasminarotella_frontend  # 🔹 CORRETTO IL PERCORSO
 npm install
 npm run build
 
