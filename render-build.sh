@@ -13,7 +13,7 @@ echo "✅ Spostamento della build nel backend..."
 mv dist/* ../jasminarotella_backend/app/static/
 
 echo "🔧 Installazione delle dipendenze backend..."
-cd ../../../jasminarotella_backend
+cd ../
 pip install -r requirements.txt
 
 echo "✅ Build completata con successo!"
