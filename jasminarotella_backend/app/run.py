@@ -1,7 +1,7 @@
 import os
 from flask import send_from_directory
 from flask_cors import CORS
-from config.database import create_app, db  # Importa la funzione create_app
+from config.database import create_app, db
 from routes.agenti import agenti_bp
 from routes.zona import zona_bp
 
