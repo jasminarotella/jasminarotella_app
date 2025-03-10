@@ -1,14 +1,14 @@
 import os
 from flask import send_from_directory
 from flask_cors import CORS
-from config.database import create_app, db  # Importa la funzione create_app
+from config.database import create_app  # Importa la funzione create_app
 from routes.agenti import agenti_bp
 from routes.zona import zona_bp
 
 # Crea l'app Flask
 app = create_app()
 
-# Abilita CORS
+# Abilita CORS per il frontend React
 CORS(app, resources={r"/*": {"origins": "http://localhost:5173"}}, supports_credentials=True)
 
 # Registra le API
@@ -24,11 +24,7 @@ def serve_frontend(path):
         return send_from_directory(app.static_folder, path)
     return send_from_directory(app.static_folder, "index.html")
 
-# Creazione del database all'avvio
-with app.app_context():
-    db.create_all()
-
+# Avvia l'app solo se eseguita direttamente
 if __name__ == "__main__":
-    app.run(debug=True)
     port = int(os.environ.get("PORT", 5000))  # Usa la porta assegnata da Render
-app.run(host="0.0.0.0", port=port)
+    app.run(host="0.0.0.0", port=port, debug=True)
