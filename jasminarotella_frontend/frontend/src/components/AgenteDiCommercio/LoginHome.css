@@ -1,0 +1,49 @@
+/* Stili generali */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenitore principale */
+.agente-autorizzato-home {
+    max-width: 500px;
+    margin: 100px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Titolo */
+.agente-autorizzato-home h1 {
+    color: #333;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Bottoni */
+nav button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%;
+}
+
+nav button:hover {
+    background-color: #0056b3;
+}

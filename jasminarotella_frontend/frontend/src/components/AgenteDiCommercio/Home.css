@@ -1,0 +1,107 @@
+/* Impostazioni di base per la pagina */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    /* Sfondo con gradiente */
+}
+
+/* Contenitore principale della home page */
+.homepage-agente {
+    /* Larghezza massima e centratura dell'elemento */
+    max-width: 350px;
+    margin: 10% auto; /* Sposta il box verso il centro */
+    
+    background: linear-gradient(to right, #3f5efb, #fc466b);
+    /* Sfondo bianco */
+    
+    /* Spaziatura interna */
+    padding: 2rem;
+    
+    /* Arrotondamento degli angoli e ombra */
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+    
+    /* Allineamento del testo al centro */
+    text-align: center;
+}
+
+/* Titolo di benvenuto */
+.homepage-agente h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* Ogni label con display block, margine e testo */
+.homepage-agente label {
+    display: block;
+    margin-bottom: 0.5rem;
+    text-align: left;
+    font-weight: bold;
+}
+
+/* Campi di testo */
+.homepage-agente input[type="text"],
+.homepage-agente input[type="password"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+/* Pulsante di login */
+.homepage-agente button {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: black;
+    background-color: #fff;
+    /* Gradiente orizzontale per il bottone */
+    transition: opacity 0.3s ease;
+  }
+  
+  /* Effetto hover sul pulsante */
+  .homepage-agente button:hover {
+    opacity: 0.9;
+  }
+  
+  /* Stile per il testo di messaggio (errore/successo) */
+  .homepage-agente p {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    color: #333;
+  }
+  
+  /* Personalizzazione del link di registrazione (se lo desideri) */
+  .homepage-agente  {
+    text-decoration: none;
+    color: #3f5efb;
+    font-weight: bold;
+  }
+  
+  /* Se vuoi personalizzare anche il pulsante di registrazione */
+  .homepage-agente  button {
+    margin-top: 1rem;
+    background: #fff;
+    color: #3f5efb;
+    border: 2px solid #3f5efb;
+    transition: all 0.3s ease;
+  }
+  
+  /* Hover sul pulsante di registrazione */
+  .homepage-agente  button:hover {
+    background: #3f5efb;
+    color: #fff;
+  }
+  
